@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Jeffrey van Pelt
+  description: Debian Background Branding
+  company:
+  role_name: branding
+
+  license: GPLv3
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+
+  galaxy_tags:
+    - background
+    - desktop
+    - wallpaper
+
+dependencies: []

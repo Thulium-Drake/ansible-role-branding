@@ -1,0 +1,6 @@
+---
+# Image file to use for the Login Manager
+branding_login_background: 'login.jpg'
+
+# Image file to use as the default Desktop background
+branding_desktop_background: 'desktop.jpg'
