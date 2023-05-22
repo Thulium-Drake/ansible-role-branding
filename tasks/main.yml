@@ -1,37 +1,37 @@
 ---
 - name: 'Create directory to contain files'
-  file:
+  ansible.builtin.file:
     dest: '/usr/share/branding'
     state: 'directory'
     owner: 'root'
     group: 'root'
-    mode: 0755
+    mode: '0755'
 
 - name: 'Copy login manager background'
-  copy:
+  ansible.builtin.copy:
     dest: '/usr/share/branding/corporate_login.jpg'
     src: "{{ branding_login_background }}"
     owner: 'root'
     group: 'root'
-    mode: 0644
+    mode: '0644'
 
 - name: 'Set login manager background'
-  alternatives:
+  community.general.alternatives:
     name: 'desktop-login-background'
     link: '/usr/share/images/desktop-base/login-background.svg'
     path: '/usr/share/branding/corporate_login.jpg'
     priority: 10
 
 - name: 'Copy default desktop background'
-  copy:
+  ansible.builtin.copy:
     dest: '/usr/share/branding/corporate_desktop.jpg'
     src: "{{ branding_desktop_background }}"
     owner: 'root'
     group: 'root'
-    mode: 0644
+    mode: '0644'
 
 - name: 'Set default desktop background'
-  alternatives:
+  community.general.alternatives:
     name: 'desktop-background'
     link: '/usr/share/images/desktop-base/desktop-background'
     path: '/usr/share/branding/corporate_login.jpg'
