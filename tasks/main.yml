@@ -1,4 +1,9 @@
 ---
+- name: 'Ensure dependencies'
+  ansible.builtin.package:
+    name: 'desktop-base'
+    state: 'present'
+
 - name: 'Create directory to contain files'
   ansible.builtin.file:
     dest: '/usr/share/branding'
