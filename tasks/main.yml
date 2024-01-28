@@ -27,7 +27,7 @@
 - name: 'Set login manager background'
   community.general.alternatives:
     name: 'desktop-login-background'
-    link: '/usr/share/images/desktop-base/login-background.svg'
+    link: "{{ branding_default_desktop_path }}"
     path: '/usr/share/branding/corporate_login.jpg'
     priority: 10
 
