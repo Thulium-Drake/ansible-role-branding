@@ -1,7 +1,11 @@
 ---
+- name: 'Include OS specific variables'
+  ansible.builtin.include_vars: "{{ ansible_facts['os_family'] }}.yml"
+  no_log: true
+
 - name: 'Ensure dependencies'
   ansible.builtin.package:
-    name: 'desktop-base'
+    name: "{{ branding_desktop_base_package }}"
     state: 'present'
 
 - name: 'Create directory to contain files'
@@ -38,6 +42,6 @@
 - name: 'Set default desktop background'
   community.general.alternatives:
     name: 'desktop-background'
-    link: '/usr/share/images/desktop-base/desktop-background'
+    link: "{{ branding_default_desktop_path }}"
     path: '/usr/share/branding/corporate_login.jpg'
     priority: 10

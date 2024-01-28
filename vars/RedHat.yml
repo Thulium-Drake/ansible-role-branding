@@ -1,0 +1,3 @@
+---
+branding_desktop_base_package: 'desktop-backgrounds-compat'
+branding_default_desktop_path: '/usr/share/backgrounds/default.png'
